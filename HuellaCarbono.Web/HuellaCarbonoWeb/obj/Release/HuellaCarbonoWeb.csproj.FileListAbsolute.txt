@@ -1,0 +1,283 @@
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\csc.exe
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\vbc.exe
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll.config
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Owin.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\WebGrease.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Helpers.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Mvc.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Optimization.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Razor.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csprojAssemblyReference.cache
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csproj.CoreCompileInputs.cache
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csproj.CopyComplete
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\csc.exe
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\vbc.exe
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll.config
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Owin.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\WebGrease.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.pdb
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Helpers.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Mvc.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Optimization.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Razor.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csprojResolveAssemblyReference.cache
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.dll
+C:\Users\dquispe\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\csc.exe
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\vbc.exe
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\roslyn\VBCSCompiler.exe.config
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll.config
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbonoWeb.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Owin.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\WebGrease.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BE.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\HuellaCarbono.BL.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Newtonsoft.Json.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Helpers.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Mvc.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Optimization.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.Razor.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\System.Web.WebPages.Razor.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Antlr3.Runtime.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\EntityFramework.SqlServer.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Google.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Helpers.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Mvc.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Optimization.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.Razor.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csprojAssemblyReference.cache
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csproj.CoreCompileInputs.cache
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.csproj.CopyComplete
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbonoWeb\obj\Release\HuellaCarbonoWeb.pdb

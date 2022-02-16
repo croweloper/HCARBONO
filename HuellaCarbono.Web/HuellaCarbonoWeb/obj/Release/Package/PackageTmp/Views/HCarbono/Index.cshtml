@@ -1,0 +1,1277 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*API cuenta DQ*@
+@*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBv-BlWNAcHxZ5uLhCnIGyIc5U1fGcP7w"></script>*@
+@*API cuenta FN*@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdn5aTDNusiL2ymmKykAsNyVE5-oE6ces"></script>
+
+<script type="text/javascript" src="~/assets/js/jquery.mask.js"></script>
+<style>
+    .alturatemp {
+        padding-top: 250px;
+    }
+
+    .modal-header {
+        padding: 0.5rem;
+    }
+
+    .close {
+        font-size: 1.2rem;
+    }
+</style>
+<form class="navbar-form">
+    <div class="container" style="margin: 0 auto;">
+        <!--Pregunta de cant de tramos-->
+
+        <div class="row card-body alturatemp" id="id_vista1" style="align-content:center; vertical-align:middle; ">
+        
+            <p style="color:#20a6ff; font-weight:bold">*Considerar solo tu ruta de ida al trabajo</p>
+            <label id="id_preg1" style="font-size:25px; margin: 0 auto;">¿Cuántos tramos recorrías en el 2020 de tu casa para llegar a tu centro de labores de BanBif? (considera como fue tu transporte antes del inicio de la pandemia) </label>
+        </div>
+        <div id="id_vistacheck">
+            
+            <input type="radio" checked="checked" id="cbxHome" name="tipotrabajo" value="Home" onclick="ValidaHome('home')">
+            <label for="cbxHome">Realicé home office todo o casi todo el año 2020</label><br>
+            <input type="radio" id="cbxPresencial" name="tipotrabajo" value="Presencial" onclick="ValidaHome('presencial')">
+            <label for="cbxPresencial">Trabajé de manera presencial todo o casi todo el año 2020</label><br>
+
+        </div>
+        <br />
+        <div id="divButton" style="margin: 0 auto; text-align:center">
+            <div class="input-group col-sm-2" style="margin: 0 auto;">
+                @*<input id="id_nroTramo" type="text" class="form-control" placeholder="Tramos" maxlength="1" value="1">*@
+                <select class="form-control" id="id_nroTramo">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <div class="input-group-append">
+                    &nbsp;
+                    <button type="button" id="btnGeneradorTramos" class="btn btn-default" style="width: 35px;height: 35px;padding: 0px 0px;border-radius: 17.5px;text-align: center;font-size: 18px; font-weight:700; color:white;background-color:#20a6ff;">
+                        <img style="width: 22px;margin: 0 auto;padding-bottom: 5px;padding-left: 5px;" src="~/assets/img/send-button.png" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="div_example">
+            <ul class="list-unstyled">
+                <li class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Ejemplo 01</h5>
+                        •	Vivo en San Miguel y mi centro de labores es la sede principal del BanBif, para llegar tengo 3 tramos básicamente. De mi casa al paradero voy en mototaxi, del paradero tomo el corredor azul y me bajo en el paradero de la positiva y después camino hacia mi oficina. En total serian 3 tramos.
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Ejemplo 02</h5>
+                        •	Vivo en Pueblo libre y un familiar cercano me deja en la oficina de Larco del BanBif ya que estoy en ruta a su centro de labores. Esto cuenta como un tramo y mi medio de transporte es particular.
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Ejemplo 03</h5>
+                        •	Si antes de venir a trabajar vas al gimnasio a entrenar, dejar a tus hijos al colegio y luego te diriges a tu centro de labores Banbif eso se considera como solo 1 tramo.
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!--Indicar mapa-->
+        <div id="div_tramo_texto" class="row" style="padding-top:initial; display:none">
+            @*<div class="col-9 col-sm-9 col-md-9 col-lg-9">
+                <small id="id_tramotxt" class="form-text text-muted">Indique los tramos en el mapa:</small>
+            </div>*@
+        </div>
+
+        <!--Tramo del mapa-->
+        @*<div id="idMapa" style="width:100%; margin: 0 auto;">
+            <div class="google-map" id="form-map"></div>
+        </div>*@
+
+        <!--Segunda vista-->
+        <div id="idpreg2_hc" style="display:none">
+            @Html.Partial("~/Views/Home/_Pregunta2.cshtml")
+        </div>
+        <div id="ContenedorTramos">
+        </div>
+        <div id="div_contenedor_p3">
+        </div>
+        <div id="div_contenedor_p4">
+        </div>
+        <div id="DivBotonEnviar" class="row text-center" style="display:none; ">
+            <button id="btnEnviar" type="button" class="btn btn-primary align-content-center"
+                    style="width:200px;background-color:#20a6ff;
+                        border-color:transparent !important;">
+                Enviar
+            </button>
+            <br /><br />
+                  <div style="float:left">
+                      <p style="color:#20a6ff; font-weight:bold">
+                          DUDAS O CONSULTAS AL SIGUIENTE WHATSAPP <br>
+                          942021454</p>
+                  </div>
+        </div>
+        <br />
+    </div>
+    <br />
+</form>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Marque en el mapa el punto de inicio y punto final </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                @*<div class="row div_puntos clsPuntos">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="">Punto A</label>
+                    <input type="text" class="form-control txt_punto_inicio" placeholder="Ingrese su punto de inicio" />
+                    <label style="COLOR: red; font-size: 9.5px; padding-bottom: 0px; margin-bottom: 0px;  font-weight: 700;">Ingrese su punto de inicio en el mapa</label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="">Punto B</label>
+                    <input type="text" class="form-control txt_punto_fin" placeholder="Ingrese su punto de final" />
+                    <label style="COLOR: red; font-size: 9.5px; padding-bottom: 0px; margin-bottom: 0px;  font-weight: 700;">Ingrese su punto final en el mapa</label>
+                </div>
+            </div>
+        </div>*@
+                <div class="row div_puntos clsPuntos">
+                    <div class="col-sm-12">
+                        <p>
+                            @*<img src="~/assets/images/locationA.png" />
+                    <img src="~/assets/images/locationB.png" />*@
+                            Lee las siguientes indicaciones: <a class="m-2" style="color:#20a6ff" target="_blank" href="http://bif1pdc10/video_banbif/BanBifTV/video.php?idvideo=223"><b><u>Ver tutorial</u></b></a><img style="width:30px;" src="~/assets/images/video.png" />
+                            <br /><b>Paso 1</b>: Para marcar tu punto de inicio (Punto A <img src="~/assets/images/locationA.png" style="height: 30px" />), búscalo en el mapa y da <b>un clic</b> donde quieras comenzar tu tramo. Aparecerá un marcador como este (<img src="~/assets/images/locationA.png" style="height: 30px" />)
+                            <br /><b>Paso 2</b>: Para marcar tu punto final (Punto B <img src="~/assets/images/locationB.png" style="height: 30px" />) búscalo en el mapa y da <b>un clic</b> donde quieras terminar tu tramo. Aparecerá un marcador como este (<img src="~/assets/images/locationB.png" style="height: 30px" />).
+                            <br /><b>Paso 3</b>: Para modificar alguno de los puntos, solo arrastra el marcador.
+                            <br /><b>Paso 4</b>: <b>Da clic</b> en guardar.
+                            <br />Recuerda que no podrás modificar los puntos luego de guardar.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row div_Metropolitano clsPuntos" style="display:none">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Punto A</label>
+                            <select class="form-control ListarMetropolitano ListarMetropolitanoInicio" data-inicio="0"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Punto B</label>
+                            <select class="form-control ListarMetropolitano ListarMetropolitanoFinal" data-inicio="1"></select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row div_tren clsPuntos" style="display:none">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Punto A</label>
+                            <select class="form-control ListarTren ListarTrenInicio" data-inicio="0"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Punto B</label>
+                            <select class="form-control ListarTren ListarTrenFinal" data-inicio="1"></select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="idMapa" style="width:100%; margin: 0 auto;">
+                    <div class="google-map" id="form-map"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btnGuardarLocacion">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var map;
+    var geocoder = null;
+    var markers = {};
+    var mostrar_localizacion = true;
+    var rows = 0;
+    var isInicio = 0;
+
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var labelIndex = 0;
+
+    var Total = 0;
+    var contar = 1;
+
+    var Origen = "";
+    var Destino = "";
+
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+
+    var Home = true;
+    var Presencial = false;
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+    function FN_Loading() {
+        $.blockUI({
+            message: $("#ModalLoading"),
+            css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: '#000000',
+                '-webkit-border-radius': '50px',
+                '-moz-border-radius': '50px',
+                opacity: .7,
+                color: '#fff'
+            },
+            baseZ: 2000
+        });
+    }
+
+    FN_Loading();
+    function Route(OrigenLat, OrigenLong, DestinoLat, DestinoLong, routeTravelMode) {
+        InitiateGoogleMap.deleteMarkers();
+        InitiateGoogleMap.clearMarkers();
+        var start = new google.maps.LatLng(OrigenLat, OrigenLong);
+        var end = new google.maps.LatLng(DestinoLat, DestinoLong);
+
+        //$('body img.selected').attr("data-origen-Latitud", Origen.Latitud);
+        //$('body img.selected').attr("data-origen-Longitud", Origen.Longitud);
+        //$('body img.selected').attr("data-Destino-Latitud", Destino.Latitud);
+        //$('body img.selected').attr("data-Destino-Longitud", Destino.Longitud);
+
+
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: routeTravelMode == "W" ? google.maps.TravelMode.WALKING : google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function (result, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(result);
+            } else {
+                alert("couldn't get directions:" + status);
+            }
+        });
+    }
+
+    function autoCompletar(marcador, Codigo) {
+        if (marcador) {
+            var pos = marcador.getPosition()
+        }
+    }
+
+
+
+    $(document).ready(function () {
+        var latitud = -12.0917232;
+        var longitud = -77.0279508;
+        $.unblockUI();
+
+        if (sessionStorage.getItem("ID_USUARIO") == "") {
+            location.href = "/Login";
+        }
+        if (sessionStorage.getItem("ID_USUARIO") == null) {
+            location.href = "/Login";
+        }
+
+
+        $('#id_nroTramo').on('keypress', function (e) {
+            if (e.which == 13) {
+                $("#btnGeneradorTramos").click();
+            }
+            else {
+                return isNumberKey(e);
+            }
+        });
+
+        //$(".txt_tiempo_hrs_min").on()
+
+        //function objeto() {
+        //    var m = document.getElementById("matricula").value;
+        //    var expreg = new RegExp("^[A-Z]{1,2}\\s\\d{4}\\s([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){3}$");
+
+        //    if (expreg.test(m))
+        //        alert("La matrícula es correcta");
+        //    else
+        //        alert("La matrícula NO es correcta");
+        //}
+
+        $("body").on("click", ".clsMostrarPopupImg", function () {
+
+            $(".clsMostrarPopup").parent("div").parent("div").parent("div").parent(".filas").removeClass("selected");
+            $(this).parent("div").parent("div").parent("div").parent(".filas").addClass("selected");
+
+            var Tipo_Vehiculo = $("body .selected .cbo_tipo_vehi").val();
+           
+           
+
+            if (Tipo_Vehiculo == "") {
+                alertify.error("Seleccione un tipo de vehiculo.");
+                return false;
+            }
+            
+
+            var routeTravelMode = "D";
+            if (Tipo_Vehiculo == 5) {
+                routeTravelMode = "W";
+            }
+
+            if (Tipo_Vehiculo == 1) {
+                $(".div_Metropolitano").css("display", "none");
+                $(".div_tren").css("display", "");
+                $(".div_puntos").css("display", "none");
+            }
+            else {
+                if (Tipo_Vehiculo == 2) {
+                    $(".div_Metropolitano").css("display", "");
+                    $(".div_tren").css("display", "none");
+                    $(".div_puntos").css("display", "none");
+                }
+                else {
+                    $(".div_Metropolitano").css("display", "none");
+                    $(".div_tren").css("display", "none");
+                    $(".div_puntos").css("display", "");
+                }
+            }
+            InitiateGoogleMap.initMap(latitud, longitud);
+            map.addListener('click', function (e) {
+                InitiateGoogleMap.addMarker(e.latLng, map, 0);
+            });
+
+            Origen = "";
+            Destino = "";
+            contar = 1;
+
+            labelIndex = 0;
+
+            var Origen_Latitud = $("body .selected .cls_latitud_origen").val();
+            var Origen_Longitud = $("body .selected .cls_longitud_origen").val();
+            var Destino_Latitud = $("body .selected .cls_latitud_destino").val();
+            var Destino_Longitud = $("body .selected .cls_longitud_destino").val();
+
+            if (Origen_Latitud.length > 0 && Origen_Longitud.length > 0 && Destino_Latitud.length > 0 && Destino_Longitud.length > 0) {
+
+                Route(Origen_Latitud, Origen_Longitud, Destino_Latitud, Destino_Longitud, routeTravelMode);
+            }
+
+            $("#exampleModal").modal({ backdrop: 'static', keyboard: false });
+            $("#exampleModal").modal('show');
+
+        });
+        $("body").on("click", ".clsMostrarPopup", function () {
+
+
+            $(".clsMostrarPopup").parent("div").parent("div").parent("div").parent("div").parent(".filas").removeClass("selected");
+            $(this).parent("div").parent("div").parent("div").parent("div").parent(".filas").addClass("selected");
+
+            var Tipo_Vehiculo = $("body .selected .cbo_tipo_vehi").val();
+            var horaTramo = $("body .selected .cbo_hora").val() + ":" + $("body .selected .cbo_Minutos").val();
+            if (Tipo_Vehiculo == "") {
+                alertify.error("Seleccione un tipo de vehiculo.");
+                return false;
+            }
+
+           
+            if (horaTramo =="00:00") {
+                alertify.error("Seleccione una hora y/o minutos de duración del tramo.");
+                return false;
+            }
+
+
+            var routeTravelMode = "D";
+            if (Tipo_Vehiculo == 5) {
+                routeTravelMode = "W";
+            }
+
+            if (Tipo_Vehiculo == 1) {
+                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "");
+                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "none");
+
+                $(".div_Metropolitano").css("display", "none");
+                $(".div_tren").css("display", "");
+                $(".div_puntos").css("display", "none");
+
+            }
+            else {
+                if (Tipo_Vehiculo == 2) {
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "none");
+
+                    $(".div_Metropolitano").css("display", "");
+                    $(".div_tren").css("display", "none");
+                    $(".div_puntos").css("display", "none");
+
+                }
+                else {
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "");
+
+                    $(".div_Metropolitano").css("display", "none");
+                    $(".div_tren").css("display", "none");
+                    $(".div_puntos").css("display", "");
+
+                }
+            }
+
+
+
+            InitiateGoogleMap.initMap(latitud, longitud);
+            map.addListener('click', function (e) {
+                InitiateGoogleMap.addMarker(e.latLng, map, 0);
+            });
+
+            Origen = "";
+            Destino = "";
+            contar = 1;
+
+
+            labelIndex = 0;
+
+            var Origen_Latitud = $("body .selected .cls_latitud_origen").val();
+            var Origen_Longitud = $("body .selected .cls_longitud_origen").val();
+            var Destino_Latitud = $("body .selected .cls_latitud_destino").val();
+            var Destino_Longitud = $("body .selected .cls_longitud_destino").val();
+
+            if (Origen_Latitud.length > 0 && Origen_Longitud.length > 0 && Destino_Latitud.length > 0 && Destino_Longitud.length > 0) {
+
+                //var location = new google.maps.LatLng(parseFloat(Origen_Latitud), parseFloat(Origen_Longitud));
+                //InitiateGoogleMap.addMarker(location, map, 0);
+
+                //var location2 = new google.maps.LatLng(parseFloat(Destino_Latitud), parseFloat(Destino_Longitud));
+                //InitiateGoogleMap.addMarker(location2, map, 0);
+
+                Route(Origen_Latitud, Origen_Longitud, Destino_Latitud, Destino_Longitud, routeTravelMode);
+            }
+
+            $("#exampleModal").modal({ backdrop: 'static', keyboard: false });
+            $("#exampleModal").modal('show');
+        });
+        $(".btnGuardarLocacion").on("click", function () {
+            if (Origen == "") {
+                alertify.error("Seleccione un punto de Inicio");
+                return false;
+            }
+
+            if (Destino == "") {
+                alertify.error("Seleccione un punto de Final");
+                return false;
+            }
+
+            $("body .selected .cls_latitud_origen").val(Origen.Latitud);
+            $("body .selected .cls_longitud_origen").val(Origen.Longitud);
+            $("body .selected .cls_latitud_destino").val(Destino.Latitud);
+            $("body .selected .cls_longitud_destino").val(Destino.Longitud);
+
+            var Tipo_Vehiculo = $("body .selected .cbo_tipo_vehi").val();
+            if (Tipo_Vehiculo == 1) {
+                $("body .selected .cls_punto_inicio").val($(".clsPuntos .ListarTrenInicio option:selected").text());
+                $("body .selected .cls_punto_final").val($(".clsPuntos .ListarTrenFinal option:selected").text());
+
+            }
+            else {
+                if (Tipo_Vehiculo == 2) {
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "none");
+                    //$("body .selected .cls_punto_inicio").val($(".clsPuntos .ListarMetropolitanoInicio").val());
+                    //$("body .selected .cls_punto_final").val($(".clsPuntos .ListarMetropolitanoFinal").val());
+
+                    $("body .selected .cls_punto_inicio").val($(".clsPuntos .ListarMetropolitanoInicio option:selected").text());
+                    $("body .selected .cls_punto_final").val($(".clsPuntos .ListarMetropolitanoFinal option:selected").text());
+
+                }
+                else {
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                    //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "");
+
+                    $("body .selected .cls_punto_inicio").val($(".clsPuntos .txt_punto_inicio").val());
+                    $("body .selected .cls_punto_final").val($(".clsPuntos .txt_punto_fin").val());
+                }
+            }
+            alertify.success("Se registro correctamento el tramo");
+            $("#exampleModal").modal('hide');
+
+        });
+        $(".ListarMetropolitano").change(function () {
+            var ListarMetropolitano = $(this).val();
+            var cadena = ListarMetropolitano.split('|');
+            var Latitud = cadena[0];
+            var Longitud = cadena[1];
+            var punto = 'I';
+            var IsFinal = $(this).attr("data-inicio");
+            if (IsFinal == 0) {
+                punto = 'I';
+                labelIndex = 0;
+            }
+            else {
+                punto = 'F';
+                labelIndex = 1;
+            }
+            try {
+                if (contar > 2) {
+                    contar = contar - 1;
+                }
+                InitiateGoogleMap.deleteMarker(punto);
+            } catch (e) {
+            }
+            var location = new google.maps.LatLng(parseFloat(Latitud), parseFloat(Longitud));
+            InitiateGoogleMap.addMarker(location, map, punto);
+
+        });
+        $(".ListarTren").change(function () {
+            var ListarTren = $(this).val();
+            var cadena = ListarTren.split('|');
+            var Latitud = cadena[0];
+            var Longitud = cadena[1];
+            var punto = 'I';
+
+            var IsFinal = $(this).attr("data-inicio");
+
+            if (IsFinal == 0) {
+                punto = 'I';
+                labelIndex = 0;
+            }
+            else {
+                punto = 'F';
+                labelIndex = 1;
+            }
+
+            try {
+                if (contar > 2) {
+                    contar = contar - 1;
+                }
+                InitiateGoogleMap.deleteMarker(punto);
+
+            } catch (e) {
+
+            }
+
+
+            var location = new google.maps.LatLng(parseFloat(Latitud), parseFloat(Longitud));
+            InitiateGoogleMap.addMarker(location, map, punto);
+
+        });
+
+        $("#btnGeneradorTramos").on("click", function () {
+            FN_Loading();
+            try {
+                $.ajax({
+                    url: sessionStorage.APP + '/HCarbono/ListarTipoTransporte',
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    processData: true,
+                    success: function (response) {
+                        $('#id_vista1').hide();
+                        $('#id_vistacheck').hide();
+                        $('#divButton').hide();
+                        console.log(Home);
+                        console.log(Presencial);
+                        console.log(response);
+
+                        try {
+                            var NumeroTramo = $("#id_nroTramo").val();
+                            Total = NumeroTramo;
+                            contar = 1;
+                            var strHTML = "";
+                            for (var i = 0; i < NumeroTramo; i++) {
+
+                                strHTML += ' <div class="container filas row_' + i + '_0 card">';
+                                strHTML += '    <input type="hidden" class="cls_latitud_origen" value="" />';
+                                strHTML += '    <input type="hidden" class="cls_longitud_origen" value="" />';
+                                strHTML += '    <input type="hidden" class="cls_latitud_destino" value="" />';
+                                strHTML += '    <input type="hidden" class="cls_longitud_destino" value="" />';
+                                strHTML += '    <input type="hidden" class="cls_punto_inicio" value="" />';
+                                strHTML += '    <input type="hidden" class="cls_punto_final" value="" />';
+
+                                strHTML += '    <div class="row">';
+                                strHTML += '        <div class="col-sm-12">';
+                                strHTML += '           <b style="color:#20a6ff; font-size:22px; font-weight: 700;">TRAMO 0' + (i + 1) + '</b>';
+                                strHTML += '        </div>';
+                                strHTML += '    </div>';
+
+                                strHTML += '    <div class="row">';
+                                strHTML += '        <div class="col-sm-3">';
+                                strHTML += '            <div class="form-group">';
+                                strHTML += '                <label for="">Tipo de Transporte</label>';
+                                strHTML += '                <select class="form-control cbo_tipo_transp"></select>';
+                                strHTML += '            </div>';
+                                strHTML += '        </div>';
+                                strHTML += '        <div class="col-sm-3">';
+                                strHTML += '            <div class="form-group">';
+                                strHTML += '                <label for="">Tipo de vehiculo</label>';
+                                strHTML += '                <select class="form-control cbo_tipo_vehi"></select>';
+                                strHTML += '            </div>';
+                                strHTML += '        </div>';
+                                strHTML += '        <div class="col-sm-3">';
+                                strHTML += '            <div class="form-group">';
+                                strHTML += '            <label for="">Tiempo de Trayectoria HH:mm</label>';
+                                strHTML += '    <div class="row">';
+                                strHTML += '        <div class="col-sm-6">';
+                                strHTML += '            <div class="form-group">';
+                                strHTML += '                <select class="form-control cbo_hora"></select>';
+                                strHTML += '        </div></div>';
+                                strHTML += '        <div class="col-sm-6">';
+                                strHTML += '            <div class="form-group">';
+                                strHTML += '                <select class="form-control cbo_Minutos"></select>';
+                                strHTML += '        </div></div>';
+                                strHTML += '       </div></div></div>';
+
+                                //strHTML += '    <div class="row">';
+                                //strHTML += '        <div class="col-sm-3">';
+                                //strHTML += '            <div class="form-group">';
+                                //strHTML += '                <label for="">Tipo de Transporte</label>';
+                                //strHTML += '                <select class="form-control cbo_tipo_transp"></select>';
+                                //strHTML += '            </div>';
+                                //strHTML += '        </div>';
+                                //strHTML += '        <div class="col-sm-3">';
+                                //strHTML += '            <div class="form-group">';
+                                //strHTML += '                <label for="">Tipo de vehiculo</label>';
+                                //strHTML += '                <select class="form-control cbo_tipo_vehi"></select>';
+                                //strHTML += '            </div>';
+                                //strHTML += '        </div>';
+                                //strHTML += '        <div class="col-sm-3">';
+                                //strHTML += '            <div class="form-group">';
+                                //strHTML += '            <label for="">Tiempo de Trayectoria HH:mm</label>';
+                                //strHTML += '            <input type="text" class="form-control txt_tiempo_hrs_min" placeholder="__:__" />';
+                                //strHTML += '        </div>';
+                                //strHTML += '    </div>';
+
+
+                                strHTML += '    <div class="col-sm-3">';
+
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+
+                                strHTML += '<div class="row">';
+                                strHTML += '    <div class="col-sm-6">';
+                                strHTML += '       <div class="media">';
+                                strHTML += '           <img class="clsMostrarPopupImg" src="' + sessionStorage.APP + '/assets/images/maps.png" style="width:30px;" alt="...">';
+                                strHTML += '           <div class="media-body">';
+                                strHTML += '               <a href="javascript:void(0)" class="clsMostrarPopup" style="font-size:22px; color:black;    font-weight: 700; ">Marque su ruta aqui</a>';
+                                strHTML += '           </div>';
+                                strHTML += '       </div>';
+                        
+
+                                //strHTML += '        <div class="form-group">';
+                                //strHTML += '            <a href="javascript:void(0)" class="clsMostrarPopup">Marque su ruta aqui</a>';
+                                //strHTML += '        </div>';
+                                strHTML += '    </div>';
+
+
+                                strHTML += '    <div class="col-sm-3">';
+                                strHTML += '    </div>';
+                                strHTML += '    <div class="col-sm-3">';
+                                strHTML += '    </div>';
+
+                                strHTML += '</div>';
+
+
+                                strHTML += '<div  class="row div_combustible" style="display:none">';
+                                strHTML += '<div class="col-sm-3">';
+                                strHTML += '<div class="form-group">';
+                                strHTML += '    <label for="">¿Qué tipo de combustible usas?</label>';
+                                strHTML += '    <select class="form-control ddl_TipoCombustible"></select>';
+                                strHTML += '</div>';
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-sm-3">';
+                                strHTML += '<div class="form-group">';
+                                strHTML += '    <label for="">Costo Mensual S/.</label>';
+                                strHTML += '    <input type="text" class="form-control txt_costo_combustible" />';
+                                strHTML += '</div>';
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-auto">';
+                                strHTML += '   <div class="form-group">';
+                                strHTML += '       <label for="">&nbsp;</label>';
+                                strHTML += '       <div class="form-check mb-3">';
+                                strHTML += '           <input class="form-check-input FLAG_NOSE_COMB" type="checkbox" />';
+                                strHTML += '           <label class="form-check-label"  >';
+                                strHTML += '               No sé/No recuerdo';
+                                strHTML += '           </label>';
+                                strHTML += '       </div>';
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-sm-3">';
+
+                                strHTML += '</div>';
+                                strHTML += '</div>';
+                                strHTML += '<div  class="row div_potencia" style="display:none">';
+                                strHTML += '<div class="col-auto">';
+                                strHTML += '    <div class="form-group">';
+                                strHTML += '        <label for="">¿Cual es la potencia en HP/WATTS del motor?</label>';
+                                strHTML += '        <input type="text" class="form-control txt_potencia_elect" />';
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-auto">';
+                                strHTML += '    <div class="form-group">';
+                                strHTML += '        <label for="">Unidad de potencia</label>';
+                                strHTML += '        <select class="form-control cbo_tipo_potencia">';
+                                strHTML += '            <option value="HP">HP</option>';
+                                strHTML += '            <option value="WATTS">WATTS</option>';
+                                strHTML += '        </select>';
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-auto">';
+                                strHTML += '    <div class="form-group">';
+                                strHTML += '        <label for="">&nbsp;</label>';
+                                strHTML += '        <div class="form-check mb-3">';
+                                strHTML += '            <input class="form-check-input FLAG_NOSE_POTE" type="checkbox" />';
+                                strHTML += '            <label class="form-check-label" for="chk_potencia">';
+                                strHTML += '              No sé/No recuerdo';
+                                strHTML += '            </label>';
+                                strHTML += '        </div>';
+                                strHTML += '    </div>';
+
+                                strHTML += '</div>';
+                                strHTML += '<div class="col-sm-3">';
+
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+
+                                strHTML += '</div>';
+
+                                strHTML += '<br />';
+                            }
+
+                            strHTML += '<script>';
+                            strHTML += '$(".txt_tiempo_hrs_min").mask("00:00");';
+                            strHTML += '<//script>';
+                            var strHTML2 = strHTML.replace("<//", "</");
+
+                            $("#ContenedorTramos").html(strHTML2);
+
+                            $(".cbo_tipo_transp").html("<option value=''>-- Seleccionar --</option>");
+                            $(".ListarMetropolitano").html("<option value=''>-- Seleccionar --</option>");
+                            $(".ListarTren").html("<option value=''>-- Seleccionar --</option>");
+
+                            $.each(response.listado_tipo_transporte, function (index, value) {
+                                $(".cbo_tipo_transp").append($('<option>', { value: value.IdTipoTransporte, html: value.Descripcion }));
+                            });
+                            $.each(response.listado_metropolitano, function (index, value) {
+                                $(".ListarMetropolitano").append($('<option>', { value: value.LATITUD + '|' + value.LONGITUD, html: value.DESCRIPCION }));
+                            });
+                            $.each(response.listado_tren, function (index, value) {
+                                $(".ListarTren").append($('<option>', { value: value.LATITUD + '|' + value.LONGITUD, html: value.DESCRIPCION }));
+                            });
+                            $(".cbo_tipo_vehi").html("<option value=''>-- Seleccionar --</option>");
+
+                            for (let hour = 0; hour < 24; hour++) {
+                                var hora = hour;
+                                if (hour < 10) {
+                                    hora = '0' + hour;
+                                }
+                                $(".cbo_hora").append($('<option>', { value: hora, html: hora }));
+                            }
+                            for (let minuto = 0; minuto < 60; minuto++) {
+                                var minutos = minuto;
+                                if (minuto < 10) {
+                                    minutos = '0' + minuto;
+                                }
+                                $(".cbo_Minutos").append($('<option>', { value: minutos, html: minutos }));
+                            }
+
+
+                            $.unblockUI();
+                        } catch (e) {
+                            $.unblockUI();
+                        }
+
+
+                    },
+                    failure: function (msg) {
+                        console.log(msg);
+                        $.unblockUI();
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                        $.unblockUI();
+                    },
+                    complete: function () {
+                        $("#id_vista1").removeClass("alturatemp");
+                        $("#DivBotonEnviar").css("display", "block ");
+                        $("#idpreg2_hc").css("display", "block ");
+                        $("#div_tramo_texto").css("display", "block ");
+                        $("#div_example").css("display", "none");
+                        //$("#idMapa").css("background-color", "#c3c3c3");
+                        //$("#idMapa").css("height", "450px");
+                        //InitiateGoogleMap.initMap(latitud, longitud);
+                        //map.addListener('click', function (e) {
+                        //    InitiateGoogleMap.addMarker(e.latLng, map, 0);
+                        //});
+                    }
+                });
+
+            } catch (e) {
+                $("#id_vista1").removeClass("alturatemp");
+                console.log(e);
+                $.unblockUI();
+            }
+
+        });
+        $("body").on("change", ".cbo_tipo_transp", function () {
+            var oBE = {};
+            try {
+                FN_Loading();
+
+                oBE.idTipoVehiculo = 0;
+                oBE.idTipoTransporte = $(this).val();
+                oBE.descripcionTipoVehiculo = 0;
+
+                var input = $(this).parent("div").parent("div").parent("div").find(".cbo_tipo_vehi");
+
+                $.ajax({
+                    url: sessionStorage.APP + '/HCarbono/ListadoTipoVehiculo',
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    processData: true,
+                    data: JSON.stringify(oBE),
+                    success: function (response) {
+                        $.unblockUI();
+                        input.html("<option value=''>-- Seleccionar --</option>");
+                        $.each(response, function (index, value) {
+                            input.append($('<option>', { value: value.idTipoVehiculo, html: value.descripcionTipoVehiculo }));
+                        });
+
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_combustible").css("display", "none");
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_potencia").css("display", "none");
+
+                        //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                        //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                        //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "");
+
+                        $(".div_Metropolitano").css("display", "none");
+                        $(".div_tren").css("display", "none");
+                        $(".div_puntos").css("display", "");
+
+
+                    },
+                    failure: function (msg) {
+                        console.log(msg);
+                        $.unblockUI();
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                        $.unblockUI();
+                    },
+                    complete: function () {
+                        //$.unblockUI();
+                        //$("#prueba").dialog("close")
+                    }
+                });
+
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_latitud_origen").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_longitud_origen").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_latitud_destino").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_longitud_destino").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_punto_inicio").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_punto_final").val("");
+
+            } catch (e) {
+                $.unblockUI();
+            }
+
+
+        });
+        $("body").on("change", ".cbo_tipo_vehi", function () {
+            try {
+
+                var Codigo = $(this).val();
+                var strHTML = '';
+
+                var input_combustible = $(this).parent("div").parent("div").parent("div").parent("div").find(".ddl_TipoCombustible");
+                var div_combustible = $(this).parent("div").parent("div").parent("div").parent("div").find(".div_combustible");
+                var div_potencia = $(this).parent("div").parent("div").parent("div").parent("div").find(".div_potencia");
+
+                if (Codigo == 6 || Codigo == 9) {
+                    FN_Loading();
+                    $.ajax({
+                        url: sessionStorage.APP + '/HCarbono/ListarTipoCombustible',
+                        type: "POST",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        processData: true,
+                        //  data: JSON.stringify(oBE),
+                        success: function (response) {
+                            $.unblockUI();
+                            input_combustible.html("<option value='0'>-- Seleccionar --</option>");
+
+                            $.each(response, function (index, value) {
+                                input_combustible.append($('<option>', { value: value.IdTipoCombustible, html: value.descripcionCombustible }));
+                            });
+
+                            //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_combustible").css("display", "");
+                            //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_potencia").css("display", "none");
+
+                            div_potencia.css("display", "none");
+                            div_combustible.css("display", "");
+
+                            $.unblockUI();
+                        },
+                        failure: function (msg) {
+                            console.log(msg);
+                            $.unblockUI();
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(error);
+                            $.unblockUI();
+                        },
+                        complete: function () {
+
+
+                        }
+                    });
+
+                }
+                else {
+                    if (Codigo == 8) {
+                        FN_Loading();
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_potencia").css("display", "");
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_combustible").css("display", "none");
+                        $.unblockUI();
+                    }
+                    else {
+                        if (Codigo == 1) {
+                            //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                            //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "");
+                            //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "none");
+
+                            $(".div_Metropolitano").css("display", "none");
+                            $(".div_tren").css("display", "");
+                            $(".div_puntos").css("display", "none");
+
+                        }
+                        else {
+                            if (Codigo == 2) {
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "");
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "none");
+
+                                $(".div_Metropolitano").css("display", "");
+                                $(".div_tren").css("display", "none");
+                                $(".div_puntos").css("display", "none");
+
+                            }
+                            else {
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_Metropolitano").css("display", "none");
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_tren").css("display", "none");
+                                //$(this).parent("div").parent("div").parent("div").parent("div").find(".div_puntos").css("display", "");
+
+                                $(".div_Metropolitano").css("display", "none");
+                                $(".div_tren").css("display", "none");
+                                $(".div_puntos").css("display", "");
+
+                            }
+                        }
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_potencia").css("display", "none");
+
+                        $(this).parent("div").parent("div").parent("div").parent("div").find(".div_combustible").css("display", "none");
+                    }
+                }
+
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_latitud_origen").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_longitud_origen").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_latitud_destino").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_longitud_destino").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_punto_inicio").val("");
+                $(this).parent("div").parent("div").parent("div").parent("div").find(".cls_punto_final").val("");
+
+            } catch (e) {
+                $.unblockUI();
+            }
+
+        });
+
+        $("#btnEnviar").on("click", function () {
+            var oBE = {};
+            var Entity = {};
+            var Listado = new Array();
+            oBE.ID_USUARIO = new String(sessionStorage.getItem("ID_USUARIO"));
+            oBE.ID_AGENCIA = sessionStorage.getItem("ID_AGENCIA");
+            oBE.flagHome = Home;
+            oBE.flagPresencial = Presencial;
+
+            var resultado = true;
+            var message = '';
+
+            oBE.Detalle = new Array();
+            FN_Loading();
+            try {
+                $("div.filas").each(function (index) {
+                    Entity.ID_HUELLA_GENERAL = 0;
+                    Entity.ID_DETALLE_HUELLA = 0;
+                    Entity.ID_TIPO_TRANSP = $(this).find("select.cbo_tipo_transp").val();
+                    Entity.ID_TIPO_VEHI = $(this).find("select.cbo_tipo_vehi").val();
+                    Entity.TIEMPO_HRS_MIN = $(this).find("select.cbo_hora").val() + ':' + $(this).find("select.cbo_Minutos").val();                
+
+                    Entity.ORIGEN_LAT = $(this).find(".cls_latitud_origen").val();
+                    Entity.ORIGEN_LONG = $(this).find(".cls_longitud_origen").val();
+                    Entity.DESTINO_LAT = $(this).find(".cls_latitud_destino").val();
+                    Entity.DESTINO_LONG = $(this).find(".cls_longitud_destino").val();
+                    Entity.ORDEN = (index + 1);
+
+                    if (Entity.ID_TIPO_VEHI == 6 || Entity.ID_TIPO_VEHI == 9) {
+                        Entity.ID_TIPO_COMB = $(this).find(".ddl_TipoCombustible").val();
+                        Entity.COSTO_COMB = $(this).find("input.txt_costo_combustible").val();
+
+                        if ($(this).find("input.FLAG_NOSE_COMB").is(':checked')) {
+                            Entity.FLAG_NOSE_COMB = true;
+                        }
+                        else {
+                            Entity.FLAG_NOSE_COMB = false;
+                        }
+
+                        Entity.POTENCIA_ELECT = null;
+                        Entity.ID_TIPO_POTE = null;
+                        Entity.FLAG_NOSE_POTE = null;
+                    }
+                    else {
+                        if (Entity.ID_TIPO_VEHI == 8) {
+                            Entity.POTENCIA_ELECT = $(this).find("input.txt_potencia_elect").val();
+                            Entity.ID_TIPO_POTE = $(this).find(".cbo_tipo_potencia").val();
+
+                            if ($(this).find("input.FLAG_NOSE_POTE").is(':checked')) {
+                                Entity.FLAG_NOSE_POTE = true;
+                            }
+                            else {
+                                Entity.FLAG_NOSE_POTE = false;
+                            }
+
+
+                            Entity.ID_TIPO_COMB = null;
+                            Entity.COSTO_COMB = null;
+                            Entity.FLAG_NOSE_COMB = null;
+                        }
+                    }
+                    Entity.DESCRIP_INICIO = $(this).find(".cls_punto_inicio").val();
+                    Entity.DESCRIP_FIN = $(this).find(".cls_punto_final").val();
+                    if (Entity.ID_TIPO_VEHI == 1) {
+                        Entity.ID_TIPO_DESCR = 3;
+                    }
+                    else {
+                        if (Entity.ID_TIPO_VEHI == 2) {
+                            Entity.ID_TIPO_DESCR = 2;
+                        }
+                        else {
+                            Entity.ID_TIPO_DESCR = 1;
+                        }
+                    }
+
+                    if (Entity.ORIGEN_LAT == "" && Entity.ORIGEN_LONG == "" && Entity.DESTINO_LAT == "" && Entity.DESTINO_LONG == "") {
+                        resultado = false;
+                        message += "Tramo 0" + Entity.ORDEN + ": Ud. no ha marcado la ruta del tramo.<br>";
+                    }
+
+                    if (Entity.TIEMPO_HRS_MIN == "") {
+                        resultado = false;
+                        message += "Tramo 0" + Entity.ORDEN + ": Ud. no ha ingresado el tiempo de trayectoria.<br>";
+                    }
+                    else {
+                        var ValidarFormatoHHMM = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+
+                        if (!ValidarFormatoHHMM.test(Entity.TIEMPO_HRS_MIN)) {
+                            resultado = false;
+                            message += "Tramo 0" + Entity.ORDEN + ": Tiempo de trayectoria ingresado no cuenta con el formato correcto.<br>";
+                        }
+                    }
+
+
+                    Listado.push(Entity);
+                    Entity = {};
+                });
+
+
+                oBE.Detalle = Listado;
+
+
+                if (resultado == true) {
+
+                    $.ajax({
+                        url: sessionStorage.APP + '/HCarbono/RegistrarHuella',
+                        type: "POST",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        processData: true,
+                        data: JSON.stringify(oBE),
+                        success: function (response) {
+                            $.unblockUI();
+                            console.log(response);
+
+                            location.href = sessionStorage.APP + "/HCarbono/VFinal";
+                        },
+                        failure: function (msg) {
+                            console.log(msg);
+                            $.unblockUI();
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(error);
+                            $.unblockUI();
+                        },
+                        complete: function () {
+                            InitiateGoogleMap.initMap(latitud, longitud);
+                            map.addListener('click', function (e) {
+                                InitiateGoogleMap.addMarker(e.latLng, map, 0);
+                            });
+                        }
+                    });
+
+                }
+                else {
+                    $.unblockUI();
+                    alertify.alert("AVISO", message);
+                }
+
+
+            }
+            catch (e) {
+                console.log(e);
+                $.unblockUI();
+            }
+
+        });
+
+    });
+    var InitiateGoogleMap = function () {
+        return {
+            initMap: function (latitud, longitud) {
+                geocoder = new google.maps.Geocoder();
+                google.maps.visualRefresh = true;
+
+                var myLatLng = { lat: latitud, lng: longitud };
+                var mapOptions = {
+                    center: myLatLng,
+                    zoom: 15,
+                    //   mapTypeId: 'satellite',
+                    fullscreenControl: true
+                };
+                var mapElement = document.getElementById('form-map');
+                mapElement.style.height = '400px';
+                map = new google.maps.Map(mapElement, mapOptions);
+                directionsDisplay.setMap(map);
+
+            },
+            addMarker: function (location, map, codigo) {
+                if (2 >= contar) {
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        label: labels[labelIndex++ % labels.length],
+                        map: map,
+                        draggable: true,
+                        id: codigo
+                    });
+
+                    var oBE = {};
+                    oBE.Longitud = marker.position.lng();
+                    oBE.Latitud = marker.position.lat();
+
+                    marker.addListener('dragend', function () {
+                        $("#hdn_edificacion_latitud").val(String(this.position.lat()));
+                        $("#hdn_edificacion_longitud").val(String(this.position.lng()));
+
+                        oBE.Longitud = String(this.position.lng());
+                        oBE.Latitud = String(this.position.lat());
+
+                    });
+                    map.panTo(location);
+                    markers[codigo] = marker;
+                    contar++;
+                    if (Origen == "") {
+                        Origen = oBE;
+                    }
+                    else {
+                        Destino = oBE;
+                    }
+                }
+
+            },
+
+            setMapMarkers: function (map) {
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }
+            },
+
+            clearMarkers: function () {
+                InitiateGoogleMap.setMapMarkers(null);
+            },
+
+            deleteMarkers: function () {
+                InitiateGoogleMap.clearMarkers();
+                markers = [];
+            },
+
+            centerMap: function (location) {
+                map.panTo(location);
+                map.setZoom(12);
+                $('#form-txt-latitud').val(location.lat);
+                $('#form-txt-longitud').val(location.lng);
+            },
+            deleteMarker: function (id) {
+                var marker = markers[id]; // find the marker by given id
+                marker.setMap(null);
+            }
+        };
+    }();
+
+    function ValidaHome(opc) {
+
+        if (opc == "home") {
+            Home = true;
+            Presencial = false;
+        }
+        else {
+            Home = false;
+            Presencial = true ;
+        }
+    
+      
+    }
+
+    function ValidaPresencial(opc) {
+
+        if (opc.checked == true) {
+            Presencial = true;
+
+        } else {
+            Presencial = false;
+        }
+
+    }
+</script>

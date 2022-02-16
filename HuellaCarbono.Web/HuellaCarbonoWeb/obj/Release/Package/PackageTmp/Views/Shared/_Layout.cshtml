@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanBif | Huella de Carbono</title>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="~/assets/css_s/bootstrapmin.css" />
+    <link rel="stylesheet" href="~/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+    <!-- text fonts -->
+    <link rel="stylesheet" href="~/assets/css/fonts.googleapis.com.css" />
+    <link href="~/assets/css/alertifyjs/alertify.min.css" rel="stylesheet" />
+    <link href="~/assets/css/alertifyjs/default.css" rel="stylesheet" />
+
+
+    <script src="~/assets/js/jquery-2.1.4.min.js"></script>
+    <script src="~/assets/js/alertifyjs/alertify.min.js"></script>
+    <script src="~/assets/js/jquery.blockUI.js"></script>
+    <script src="~/assets/js/numeral.js"></script>
+    <script src="~/assets/js_s/bootstrap.js"></script>
+     
+</head>
+<body style="background-color:#ffffff; border-color:transparent !important;">
+
+    <div id="ModalLoading" style="display: none;">
+        <span>
+            <img src="~/assets/img/loading2.gif" width="25" height="25" /> Cargando ....
+        </span>
+    </div>
+     
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,943 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+ 
+
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(2.25rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 0.1rem;
+            font-weight: 700;
+        }
+
+        select.input-sm {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+
+            .btn-primary:focus,
+            .btn-primary.focus {
+                color: #fff;
+                background-color: #286090;
+                border-color: #122b40;
+            }
+
+            .btn-primary:hover {
+                color: #fff;
+                background-color: #286090;
+                border-color: #204d74;
+            }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+
+
+
+
+    <div class="form-group">
+        <label for="sel1">MARCAS</label>
+        <select id="cboMarcas" class="form-control">
+            <option value="Todos">Todos</option>
+            <option value="Freightliner">Freightliner</option>
+            <option value="International">International</option>
+            <option value="Hino">Hino</option>
+            <option value="Scania">Scania</option>
+            <option value="Mercedes Benz">Mercedes Benz</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="sel2">MODELOS</label>
+        <select id="cboModelos" class="form-control" >
+            <option value="Todos">Todos</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="sel3">AÑO DE FABRICACIÓN</label>
+        <select id="cboAnioFabricacion" class="form-control">
+            <option value="Todos">Todos</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="sel3">PRECIO</label>
+        <select id="cboPrecios" class="form-control">
+            <option value="Todos">Todos</option>
+            <option value="usd40000-usd45000">USD 40,000 – USD 45,000</option>
+            <option value="usd50000-usd55000">USD 50,000 – USD 55,000</option>
+            <option value="usd55000-usd60000">USD 55,000 – USD 60,000</option>
+            <option value="usd60000-usd65000">USD 60,000 – USD 65,000</option>
+            <option value="usd65000-usd70000">USD 65,000 – USD 70,000</option>
+            <option value="usd75000-usd80000">USD 75,000 – USD 80,000</option>
+            <option value="usd80000-usd85000">USD 80,000 – USD 85,000</option>
+            <option value="usd85000-usd90000">USD 85,000 – USD 90,000</option>
+ 
+        </select>
+    </div>
+
+    <div class="form-group">
+        <div class="row text-center">
+            <label for="sel3">ENCUENTRA TU CAMIÓN</label>
+            <button id="btnBuscar" type="button" class="btn btn-primary align-content-center"
+                    style="width:200px;background-color:#20a6ff;
+                        border-color:transparent !important;">
+                Buscar
+            </button>
+        </div>
+    </div>
+
+
+  @*  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+             
+            $("#cboMarcas").on("change", function () {
+                var Codigo = $(this).val();
+                var strHTML = '';
+                if (Codigo == 'Todos') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                    strHTML += '<option value="CL120">CL120</option>';
+                    strHTML += '<option value="CL112">CL112</option>';
+                    strHTML += '<option value="9200I-SBA">9200I SBA</option>';
+                    strHTML += '<option value="7600-6X4">7600 6X4</option>';
+                    strHTML += '<option value="G420">G420</option>';
+                    strHTML += '<option value="VOLVO-FH">VOLVO FH</option>';
+                    strHTML += '<option value="VOLVO-FM">VOLVO FM</option>';
+                    strHTML += '<option value="VOLVO-FMX">VOLVO FMX</option>';
+                }
+                if (Codigo == 'Freightliner') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                    strHTML += '<option value="CL120">CL120</option>';
+                    strHTML += '<option value="CL112">CL112</option>';
+                }
+                if (Codigo == 'International') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                    strHTML += '<option value="9200I-SBA">9200I SBA</option>';
+                    strHTML += '<option value="7600-6X4">7600 6X4</option>';
+                }
+                if (Codigo == 'Hino') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                }
+                if (Codigo == 'Scania') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                    strHTML += '<option value="G420">G420</option>';
+                }
+                if (Codigo == 'Mercedes Benz') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                }
+                if (Codigo == 'Volkswagen') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                }
+                if (Codigo == 'Volvo') {
+                    strHTML += '<option value="Todos">Todos</option>';
+                    strHTML += '<option value="VOLVO-FH">VOLVO FH</option>';
+                    strHTML += '<option value="VOLVO-FM">VOLVO FM</option>';
+                    strHTML += '<option value="VOLVO-FMX">VOLVO FMX</option>';
+                }
+
+                $("#cboModelos").html(strHTML);
+            });
+
+            $("#btnBuscar").on("click", function () {
+                /* Variables */
+                
+                var Marcas = $("#cboMarcas").val();
+                var Modelos = $("#cboModelos").val();
+                var AnioFabricacion = $("#cboAnioFabricacion").val();
+                var Precios = $("#cboPrecios").val();
+
+
+                //<option value="usd40000-usd45000">USD 40,000 – USD 45,000</option>
+                //<option value="usd50000-usd55000">USD 50,000 – USD 55,000</option>
+                //<option value="usd55000-usd60000">USD 55,000 – USD 60,000</option>
+                //<option value="usd60000-usd65000">USD 60,000 – USD 65,000</option>
+                //<option value="usd65000-usd70000">USD 65,000 – USD 70,000</option>
+                //<option value="usd75000-usd80000">USD 75,000 – USD 80,000</option>
+                //<option value="usd80000-usd85000">USD 80,000 – USD 85,000</option>
+                //<option value="usd85000-usd90000">USD 85,000 – USD 90,000</option>
+
+
+
+                if (Marcas == "Todos" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                    window.location.href = "https://seminuevosvolvo.com.pe/inicio2019-b/";
+                }
+                else {
+                    window.location.href = "https://seminuevosvolvo.com.pe/" + Marcas + "-" + Modelos + "-" + AnioFabricacion + "-" + Precios; 
+                }
+
+                //if (Marcas == "Freightliner" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" )
+                //{
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner/";
+                //}
+                //if (Marcas == "International" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/international/";
+                //}
+                //if (Marcas == "Hino" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/hino/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/scania/";
+                //}
+                //if (Marcas == "Mercedes Benz" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/mercedes-benz/";
+                //}
+                //if (Marcas == "Volkswagen" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/volkswagen/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "Todos" & AnioFabricacion == "Todos" & Precios == "Todos" ) {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/volvo/";
+                //}
+
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/international-9200I-SBA/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/international-7600-6X4/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/scania-G420/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/volvo-VOLVO-FH/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/volvo-VOLVO-FM/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "Todos" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/volvo-VOLVO-FMX/";
+                //}
+
+
+                
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2010/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2011/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2012/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2013/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2014/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2015/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2016/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2017/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2018/";
+                //}
+
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2010/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2011/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2012/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2013/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2014/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2015/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2016/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2017/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2018/";
+                //}
+
+
+
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2008/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2009/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2010/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2011/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2012/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2013/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2014/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2015/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2016/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2017/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2018/";
+                //}
+
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2008/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2009/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2010/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2011/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2012/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2013/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2014/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2015/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2016/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2017/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2018/";
+
+                //}
+  
+
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2008/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2009/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2010/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2011/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2012/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2013/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2014/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2015/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2016/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2017/";
+                //    }
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //        window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2018/";
+                //    }
+
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2018/";
+                //}
+
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2018/";
+                //}
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2018/";
+                //}
+
+                //// ==================================================================================================
+
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd40000-usd45000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd40000-usd45000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd50000-usd55000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd50000-usd55000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd55000-usd60000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd55000-usd60000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd60000-usd65000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd60000-usd65000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd65000-usd70000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd65000-usd70000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd75000-usd80000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd75000-usd80000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd80000-usd85000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd80000-usd85000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2008" & Precios == "usd85000-usd90000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2008-usd85000-usd90000/";
+                //}
+                
+               
+
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd40000-usd45000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd40000-usd45000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd50000-usd55000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd50000-usd55000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd55000-usd60000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd55000-usd60000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd60000-usd65000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd60000-usd65000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd65000-usd70000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd65000-usd70000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd75000-usd80000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd75000-usd80000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd80000-usd85000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd80000-usd85000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2009" & Precios == "usd85000-usd90000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2009-usd85000-usd90000/";
+                //}
+
+
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2010" & Precios == "usd40000-usd45000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2010-usd40000-usd45000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2011" & Precios == "usd50000-usd55000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2011-usd50000-usd55000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2012" & Precios == "usd55000-usd60000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2012-usd55000-usd60000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2013" & Precios == "usd60000-usd65000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2013-usd60000-usd65000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2014" & Precios == "usd65000-usd70000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2014-usd65000-usd70000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2015" & Precios == "usd75000-usd80000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2015-usd75000-usd80000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2016" & Precios == "usd80000-usd85000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2016-usd80000-usd85000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL120" & AnioFabricacion == "2017" & Precios == "usd85000-usd90000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL120-2017-usd85000-usd90000/";
+                //}
+
+
+
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd40000-usd45000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd40000-usd45000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd50000-usd55000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd50000-usd55000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd55000-usd60000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd55000-usd60000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd60000-usd65000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd60000-usd65000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd65000-usd70000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd65000-usd70000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd75000-usd80000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd75000-usd80000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd80000-usd85000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd80000-usd85000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2008" & Precios == "usd85000-usd90000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2008-usd85000-usd90000/";
+                //}
+
+
+
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd40000-usd45000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd40000-usd45000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd50000-usd55000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd50000-usd55000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd55000-usd60000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd55000-usd60000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd60000-usd65000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd60000-usd65000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd65000-usd70000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd65000-usd70000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd75000-usd80000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd75000-usd80000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd80000-usd85000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd80000-usd85000/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2009" & Precios == "usd85000-usd90000") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2009-usd85000-usd90000/";
+                //}
+
+
+
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2010/";
+                //}
+
+
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2011/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2012/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2013/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2014/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2015/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2016/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2017/";
+                //}
+                //if (Marcas == "Freightliner" & Modelos == "CL112" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/freightliner-CL112-2018/";
+                //}
+
+
+
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2008/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2009/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2010/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2011/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2012/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2013/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2014/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2015/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2016/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2017/";
+                //}
+                //if (Marcas == "International" & Modelos == "9200I SBA" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-9200I-2018/";
+                //}
+
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2008/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2009/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2010/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2011/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2012/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2013/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2014/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2015/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2016/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2017/";
+                //}
+                //if (Marcas == "International" & Modelos == "7600 6X4" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/International-7600-6X4-2018/";
+
+                //}
+
+
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2008/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2009/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2010/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2011/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2012/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2013/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2014/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2015/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2016/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2017/";
+                //}
+                //if (Marcas == "Scania" & Modelos == "G420" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Scania-G420-2018/";
+                //}
+
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FH" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FH-2018/";
+                //}
+
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FM" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FM-2018/";
+                //}
+
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2008" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2008/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2009" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2009/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2010" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2010/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2011" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2011/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2012" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2012/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2013" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2013/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2014" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2014/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2015" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2015/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2016" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2016/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2017" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2017/";
+                //}
+                //if (Marcas == "Volvo" & Modelos == "VOLVO FMX" & AnioFabricacion == "2018" & Precios == "Todos") {
+                //    window.location.href = "https://seminuevosvolvo.com.pe/Volvo-VOLVO-FMX-2018/";
+                //}
+
+        });
+      });
+    </script>
+
+ 
+ 

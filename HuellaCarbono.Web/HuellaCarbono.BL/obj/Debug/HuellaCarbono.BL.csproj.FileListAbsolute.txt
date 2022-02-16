@@ -1,0 +1,70 @@
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csprojResolveAssemblyReference.cache
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+C:\Users\dsoto\Documents\Visual Studio 2015\Projects\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csprojAssemblyReference.cache
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CoreCompileInputs.cache
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CopyComplete
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+D:\Descargar\Huella de Carbono\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csprojAssemblyReference.cache
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CoreCompileInputs.cache
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CopyComplete
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+D:\BanBif\Huella de Carbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csprojAssemblyReference.cache
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CoreCompileInputs.cache
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CopyComplete
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+F:\BanBif\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csprojAssemblyReference.cache
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CoreCompileInputs.cache
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CopyComplete
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+C:\Personal\Banbif\Innovacion\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.dll
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BL.pdb
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.dll
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\HuellaCarbono.BE.pdb
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.AssemblyReference.cache
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CoreCompileInputs.cache
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.csproj.CopyComplete
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.dll
+C:\Users\DRomero\Desktop\MDP\Huella de Carbono\BanBif.HuellaCarbono\HuellaCarbono.Web\HuellaCarbono.BL\obj\Debug\HuellaCarbono.BL.pdb

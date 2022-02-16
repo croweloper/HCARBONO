@@ -1,0 +1,160 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BanBif | Huella de Carbono</title>
+
+
+    <link href="~/assets/css_s/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/assets/css/alertifyjs/alertify.min.css" rel="stylesheet" />
+    <link href="~/assets/css/alertifyjs/default.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.blockUI.js"></script>
+    <script src="~/assets/js/alertifyjs/alertify.js"></script>
+    <style>
+        #documento::placeholder {
+            color: #808080;
+        }
+    </style>
+</head>
+<body style=" background-image: url('http://bif1innova13/huellacarbono/assets/images/login-fondo.jpeg'); ">
+    <div id="ModalLoading" style="display: none;">
+        <span>
+            <img src="~/assets/img/loading2.gif" width="25" height="25" /> Cargando ....
+        </span>
+    </div>
+
+    <div class="container">
+         <div style="padding-top:10%;padding-bottom:10%; margin:0 auto; width:45%;" >
+             <div style="background-color: white;text-align: center;
+                            align-items: center !important;border-radius: 0.50rem;">
+
+                 <h3 style="font: normal normal normal 48px/1.4em proxima-n-w01-reg,sans-serif;padding-top:20px;">Huella de Carbono</h3>
+                 <br />
+                 @*<label style="font-size:20px;color:red;font-weight:700; padding-bottom:0;" for="documento">DOCUMENTO DE IDENTIDAD</label>*@
+                 <input id="documento" type="text" class="my-3 form-control w-100 text-center" placeholder="Ingrese documento de Identidad" value="" style="box-shadow: 0px 2px 0px 0px rgba(32,166,255,1);
+                        border-radius: 0;
+                        font: normal normal 700 20px/1.4em futura-lt-w01-book,sans-serif;color: #a2aaad;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        border-width: 0;
+                        background-color: transparent;
+                        box-sizing: border-box !important;
+                        border-style: solid;
+                        border-color: rgba(32, 166, 255, 1);
+                        padding-bottom: 3px;
+                        padding-top: 0px;
+                        margin: 0;
+                        max-width: 70%;
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1;
+                        flex: 1;
+                        text-overflow: ellipsis; margin: 0 auto;" />
+
+                 <input id="btnLogin" type="button" class="my-5 text-center w-75"
+                        style="border-radius: 0.25rem;color: #fff;
+                            background-color: #c4d600;
+                            border-color: #c4d600;line-height: 250%" value="Ingresar">
+
+
+             </div>
+         </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        function FN_Loading() {
+
+            $.blockUI({
+                message: $("#ModalLoading"),
+                css: {
+                    border: 'none',
+                    padding: '15px',
+                    backgroundColor: '#000000',
+                    '-webkit-border-radius': '50px',
+                    '-moz-border-radius': '50px',
+                    opacity: .7,
+                    color: '#fff'
+                },
+                baseZ: 2000
+
+            });
+        }
+          sessionStorage.setItem("APP", "@ViewBag.App");
+        FN_Loading();
+
+        $(document).ready(function () {
+
+
+            $("#btnLogin").on("click", function () {
+                try {
+                    FN_Loading();
+                    var oBE = {};
+                    oBE.dni = $("#documento").val();
+
+                    $.ajax({
+                        url: sessionStorage.APP + '/Login/autenticacion',
+                        type: "POST",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        processData: true,
+                        data: JSON.stringify(oBE),
+                        success: function (response) {
+                            $.unblockUI();
+                            //location.href = "/HCarbono";
+                            if (response.result == false) {
+                                alertify.error(response.message);
+                            }
+                            else {
+
+                                sessionStorage.setItem("ID_USUARIO", new String(response.data.id));
+                                sessionStorage.setItem("ID_AGENCIA", response.data.id_agencia);
+                                location.href = sessionStorage.APP + "/HCarbono";
+                            }
+                        },
+                        failure: function (msg) {
+                            console.log(msg);
+                            $.unblockUI();
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(error);
+                            $.unblockUI();
+                        },
+                        complete: function () {
+                            //$.unblockUI();
+                            //$("#prueba").dialog("close")
+                        }
+                    });
+
+                } catch (e) {
+                    console.log(e);
+                    $.unblockUI();
+                }
+            });
+
+            $('#documento').on('keypress', function (e) {
+                if (e.which == 13) {
+                    $("#btnLogin").click();
+                }
+
+            });
+
+            $.unblockUI();
+        });
+    </script>
+
+</body>
+
+
+</html>
