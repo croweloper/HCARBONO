@@ -32,18 +32,41 @@
 
             <p style="color:#20a6ff; font-weight:bold">*Considerar solo tu ruta de ida al trabajo</p>
             <label id="id_preg1" style="font-size:25px; margin: 0 auto;">
-                ¿Cuántos tramos recorrías en el 2020 de tu casa para llegar a tu centro de labores de BanBif?
+                ¿Cuántos tramos recorrías en el 2021 de tu casa para llegar a tu centro de labores BanBif?
+                
             </label>
-            <label id="id_preg1" style="font-size:22px; margin: 0 auto;">
+            @*<label id="id_preg1" style="font-size:22px; margin: 0 auto;">
                 (Si hiciste Home Office considera como fue tu transporte antes del inicio de la pandemia, en caso laboraste de manera presencial considera como fue tu transporte la mayor parte del año)
-            </label>
+            </label>*@
+
+
+            
         </div>
         <div id="id_vistacheck">
-            
+            <label id="id_preg1" style="font-size:22px; margin: 0 auto;">
+                Durante el 2021 hice trabajo:
+
+            </label>
+            <br />
+            <br />
             <input type="radio" id="cbxHome" name="tipotrabajo" value="Home" onclick="ValidaHome('home')">
-            <label for="cbxHome">Realicé home office todo o casi todo el año 2020</label><br>
+            <label for="cbxHome">
+                Virtual
+                @*- Realicé home office todo o casi todo el año 2020*@
+            </label><br>
             <input type="radio" id="cbxPresencial" name="tipotrabajo" value="Presencial" onclick="ValidaHome('presencial')">
-            <label for="cbxPresencial">Trabajé de manera presencial todo o casi todo el año 2020</label><br>
+            <label for="cbxPresencial">
+                Presencial
+                @*- Trabajé de manera presencial todo o casi todo el año 2020*@
+            </label><br>
+            <input class="togglehibrido-button" type="radio" id="cbxHibrido" name="tipotrabajo" value="Hibrido" onclick="ValidaHibrido('hibrido')">
+            <label for="cbxHibrido">Hibrido</label><br>
+
+            <label  id="togglehibrido">Fui 
+            <input type="number" max="5" min="1">
+            dias en promedio por semana</label><br>
+
+
 
         </div>
         <br />
@@ -241,6 +264,7 @@
 
     var Home = false;
     var Presencial = false;
+    var Hibrido = false;
 
     function isNumberKey(evt) {
         var charCode = (evt.which) ? evt.which : event.keyCode
@@ -249,6 +273,29 @@
 
         return true;
     }
+    ocultarhibrido();
+
+    function ocultarhibrido() {
+        document.getElementById('togglehibrido').style.visibility = "hidden";
+    }
+
+
+    function toggleHibrido() {
+        var radiotogle = document.getElementById(cbxHibrido);
+        radiotogle.onselect;
+
+    }
+
+    $("#cbxHibrido").click(function () {
+        document.getElementById('togglehibrido').style.visibility = "visible";
+    });
+    $("#cbxHome").click(function () {
+        document.getElementById('togglehibrido').style.visibility = "hidden";
+    });
+    $("#cbxPresencial").click(function () {
+        document.getElementById('togglehibrido').style.visibility = "hidden";
+    });
+
     function FN_Loading() {
         $.blockUI({
             message: $("#ModalLoading"),
@@ -340,14 +387,14 @@
             $(this).parent("div").parent("div").parent("div").parent(".filas").addClass("selected");
 
             var Tipo_Vehiculo = $("body .selected .cbo_tipo_vehi").val();
-           
-           
+
+
 
             if (Tipo_Vehiculo == "") {
                 alertify.error("Seleccione un tipo de vehiculo.");
                 return false;
             }
-            
+
 
             var routeTravelMode = "D";
             if (Tipo_Vehiculo == 5) {
@@ -409,8 +456,8 @@
                 return false;
             }
 
-           
-            if (horaTramo =="00:00") {
+
+            if (horaTramo == "00:00") {
                 alertify.error("Seleccione una hora y/o minutos de duración del tramo.");
                 return false;
             }
@@ -595,11 +642,72 @@
         });
 
         $("#btnGeneradorTramos").on("click", function () {
-            if (Home == false && Presencial== false)
-        {
+            if (Hibrido == true) {
+                alert('Realizo Trabajo Hibrido');
+            } else if (Home == true) {
+                alert('Realizo Trabajo Remoto');
+                
+
+                alert('Fin del Proceso')
+
+
+                var oBE = {};
+                var Entity = {};
+                var Listado = new Array();
+                oBE.ID_USUARIO = new String(sessionStorage.getItem("ID_USUARIO"));
+                oBE.ID_AGENCIA = sessionStorage.getItem("ID_AGENCIA");
+                oBE.flagHome = Home;
+                oBE.flagPresencial = Presencial;
+                oBE.flagHibrido = Hibrido;
+
+                var resultado = true;
+                var message = '';
+
+                oBE.Detalle = new Array();
+
+                    if (resultado == true) {
+                        $(".DivBotonEnviar").css("display", "none");
+                        $.ajax({
+                            url: sessionStorage.APP + '/HCarbono/RegistrarHuella',
+                            type: "POST",
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            processData: true,
+                            data: JSON.stringify(oBE),
+                            success: function (response) {
+                                $.unblockUI();
+                                console.log(response);
+
+                                location.href = sessionStorage.APP + "/HCarbono/VFinal";
+                            },
+                            failure: function (msg) {
+                                console.log(msg);
+                                $.unblockUI();
+                            },
+                            error: function (xhr, status, error) {
+                                console.log(error);
+                                $.unblockUI();
+                            },
+                            complete: function () {
+                                InitiateGoogleMap.initMap(latitud, longitud);
+                                map.addListener('click', function (e) {
+                                    InitiateGoogleMap.addMarker(e.latLng, map, 0);
+                                });
+                            }
+                        });
+
+                    }
+                    else {
+                        $.unblockUI();
+                        alertify.alert("AVISO", message);
+                    }
+                
+            } else if (Home == false && Presencial == false && Hibrido == false) {
                 alertify.error("Seleccione una opción de como fue tu transporte antes del inicio de la pandemia.");
                 return false;
-        }
+            } else {
+                alert('Realizo Trabajo Presencial');
+            }
             FN_Loading();
             try {
                 $.ajax({
@@ -612,8 +720,10 @@
                         $('#id_vista1').hide();
                         $('#id_vistacheck').hide();
                         $('#divButton').hide();
-                        console.log(Home);
-                        console.log(Presencial);
+                        console.log({ Home });
+                        console.log({ Presencial });
+                        console.log({ Hibrido });
+
                         console.log(response);
 
                         try {
@@ -685,20 +795,29 @@
                                 //strHTML += '    </div>';
 
 
-                                strHTML += '    <div class="col-sm-3">';
+                                strHTML += '    <div class="col-sm-3" style="display:flex; align-items:center !important;">';
 
-                                strHTML += '    </div>';
-                                strHTML += '</div>';
-
-                                strHTML += '<div class="row">';
-                                strHTML += '    <div class="col-sm-6">';
                                 strHTML += '       <div class="media">';
                                 strHTML += '           <img class="clsMostrarPopupImg" src="' + sessionStorage.APP + '/assets/images/maps.png" style="width:30px;" alt="...">';
                                 strHTML += '           <div class="media-body">';
                                 strHTML += '               <a href="javascript:void(0)" class="clsMostrarPopup" style="font-size:22px; color:black;    font-weight: 700; ">Marque su ruta aqui</a>';
                                 strHTML += '           </div>';
                                 strHTML += '       </div>';
-                        
+
+                                strHTML += '    </div>';
+                                strHTML += '</div>';
+
+                                strHTML += '<div class="row">';
+                                strHTML += '    <div class="col-sm-6">';
+
+                                //Cambios Carbono 2022
+                                //strHTML += '       <div class="media">';
+                                //strHTML += '           <img class="clsMostrarPopupImg" src="' + sessionStorage.APP + '/assets/images/maps.png" style="width:30px;" alt="...">';
+                                //strHTML += '           <div class="media-body">';
+                                //strHTML += '               <a href="javascript:void(0)" class="clsMostrarPopup" style="font-size:22px; color:black;    font-weight: 700; ">Marque su ruta aqui</a>';
+                                //strHTML += '           </div>';
+                                //strHTML += '       </div>';
+
 
                                 //strHTML += '        <div class="form-group">';
                                 //strHTML += '            <a href="javascript:void(0)" class="clsMostrarPopup">Marque su ruta aqui</a>';
@@ -855,6 +974,8 @@
             }
 
         });
+
+
         $("body").on("change", ".cbo_tipo_transp", function () {
             var oBE = {};
             try {
@@ -890,8 +1011,8 @@
                         $(".div_Metropolitano").css("display", "none");
                         $(".div_tren").css("display", "none");
                         $(".div_puntos").css("display", "");
-                        
-                        
+
+
                     },
                     failure: function (msg) {
                         console.log(msg);
@@ -1029,8 +1150,10 @@
 
         });
 
+
+        //Inicio de  BTNENVIAR
         $("#btnEnviar").on("click", function () {
-           
+
             var oBE = {};
             var Entity = {};
             var Listado = new Array();
@@ -1038,7 +1161,8 @@
             oBE.ID_AGENCIA = sessionStorage.getItem("ID_AGENCIA");
             oBE.flagHome = Home;
             oBE.flagPresencial = Presencial;
-           
+            oBE.flagHibrido = Hibrido;
+
             var resultado = true;
             var message = '';
 
@@ -1050,7 +1174,7 @@
                     Entity.ID_DETALLE_HUELLA = 0;
                     Entity.ID_TIPO_TRANSP = $(this).find("select.cbo_tipo_transp").val();
                     Entity.ID_TIPO_VEHI = $(this).find("select.cbo_tipo_vehi").val();
-                    Entity.TIEMPO_HRS_MIN = $(this).find("select.cbo_hora").val() + ':' + $(this).find("select.cbo_Minutos").val();                
+                    Entity.TIEMPO_HRS_MIN = $(this).find("select.cbo_hora").val() + ':' + $(this).find("select.cbo_Minutos").val();
 
                     Entity.ORIGEN_LAT = $(this).find(".cls_latitud_origen").val();
                     Entity.ORIGEN_LONG = $(this).find(".cls_longitud_origen").val();
@@ -1178,6 +1302,8 @@
 
         });
 
+        //Fin de BTNENVIAR
+
     });
     var InitiateGoogleMap = function () {
         return {
@@ -1269,10 +1395,24 @@
         }
         else {
             Home = false;
-            Presencial = true ;
+            Presencial = true;
         }
-    
-      
+
+
+    }
+
+    function ValidaHibrido(opc) {
+
+        if (opc == "hibrido") {
+            Hibrido = true;
+            Presencial = false;
+        }
+        else {
+            Home = false;
+
+        }
+
+
     }
 
     function ValidaPresencial(opc) {
